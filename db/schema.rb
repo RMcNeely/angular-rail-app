@@ -11,45 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806205913) do
-
-  create_table "frameworks", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.text     "homepage"
-    t.text     "documentation"
-    t.text     "description"
-  end
-
-  create_table "languages", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.text     "homepage"
-    t.text     "documentation"
-    t.text     "description"
-  end
+ActiveRecord::Schema.define(version: 20160807144147) do
 
   create_table "resources", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "text"
-    t.integer  "framework_id"
-    t.integer  "technology_id"
-    t.integer  "language_id"
+    t.integer  "skill_id"
     t.text     "link"
   end
 
   create_table "skills", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "technologies", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.text     "homepage"
-    t.text     "documentation"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.text     "name"
+    t.text     "type"
     t.text     "description"
+    t.text     "homepage_link"
+    t.text     "documentation_link"
   end
 
   create_table "users", force: :cascade do |t|
