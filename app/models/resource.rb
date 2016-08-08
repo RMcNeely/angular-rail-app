@@ -1,4 +1,5 @@
 class Resource < ActiveRecord::Base
-  belongs_to :framework, :language, :techology
-  validates :link, :text, presence: true
+  belongs_to :skill
+  validates :link, :text, :skill_id, presence: true
+  validates :link, url: true
 end
