@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20160807144147) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.text     "name"
-    t.text     "type"
+    t.text     "category"
     t.text     "description"
-    t.text     "homepage_link"
+    t.text     "link"
     t.text     "documentation_link"
   end
 
