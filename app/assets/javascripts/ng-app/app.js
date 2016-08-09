@@ -4,8 +4,13 @@ angular
     $stateProvider
       .state('home', {
         url: '/home',
-        controller:'skillController',
-        templateUrl: 'templates/home'
+        controller:'SkillController',
+        templateUrl: 'templates/home.html'
+      })
+      .state('home.about', {
+        url: '/home/about',
+        controller: 'SkillController',
+        templateUrl: 'templates/about.html'
       })
 
       $urlRouterProvider.otherwise('/home')
