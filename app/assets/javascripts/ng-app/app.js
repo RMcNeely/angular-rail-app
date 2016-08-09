@@ -1,17 +1,22 @@
 angular
-  .module('app', ['ui.router' ])
+  .module('app', ['ui.router', 'ngAnimate', 'templates' ])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
         url: '/home',
         controller:'SkillController',
-        templateUrl: 'templates/home.html'
+        templateUrl: 'home.html'
       })
-      .state('home.about', {
-        url: '/home/about',
+      .state('about', {
+        url: '/about',
         controller: 'SkillController',
-        templateUrl: 'templates/about.html'
+        templateUrl: 'about.html'
       })
 
-      $urlRouterProvider.otherwise('/home')
+      // default fall back route
+   $urlRouterProvider.otherwise('/');
+
+   // enable HTML5 Mode for SEO
+   $locationProvider.html5Mode(true);
+
   })

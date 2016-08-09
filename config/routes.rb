@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
   root 'application#home'
+  get '*path' => 'application#home'
   get 'resource' => 'resource#show'
   get 'skill' => 'skill#show'
   get 'all-skills' => 'skill#index'
