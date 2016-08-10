@@ -12,6 +12,26 @@ angular
         controller: 'SkillController',
         templateUrl: 'about.html'
       })
+      .state('home.language', {
+        url: '/language',
+        controller: 'SkillController',
+        templateUrl: 'language.html'
+      })
+      .state('home.skope', {
+        url: '/:skope',
+        controller: 'SkopeController',
+        templateUrl: 'skope.html'
+      })
+      .state('home.technology', {
+        url: '/technology',
+        controller: 'SkillController',
+        templateUrl: 'technology.html'
+      })
+      .state('home.miscellaneous', {
+        url: '/miscellaneous',
+        controller: 'SkillController',
+        templateUrl: 'miscellaneous.html'
+      })
 
       // default fall back route
   //  $urlRouterProvider.otherwise('/');

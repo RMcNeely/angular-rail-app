@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module AngularRailsApp
   class Application < Rails::Application
-    # config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets", "stylesheets")
+    config.assets.paths << Rails.root.join("bower_components","materialize", "sass", "materialize.scss")
     # config.assets.paths << Rails.root.join("vendor","assets","bower_components","fonts")
     config.assets.paths << Rails.root.join('bower_components')
     # Settings in config/environments/* take precedence over those specified here.
