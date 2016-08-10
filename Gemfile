@@ -26,6 +26,7 @@ gem 'devise'
 gem 'faker'
 gem 'active_model_serializers'
 gem 'pry'
+# gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'validate_url', github: 'perfectline/validates_url'
 # Use ActiveModel has_secure_password
