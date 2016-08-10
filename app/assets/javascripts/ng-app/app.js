@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'ngAnimate', 'templates' ])
+  .module('app', [ 'ui.router', 'ngAnimate', 'templates' ])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
@@ -14,9 +14,9 @@ angular
       })
 
       // default fall back route
-   $urlRouterProvider.otherwise('/');
+  //  $urlRouterProvider.otherwise('/');
 
-   // enable HTML5 Mode for SEO
-   $locationProvider.html5Mode(true);
+  //  // enable HTML5 Mode for SEO
+  //  $locationProvider.html5Mode(true);
 
   })
