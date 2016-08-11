@@ -1,4 +1,11 @@
 class SkillSerializer < ActiveModel::Serializer
-  binding.pry
   attributes :id, :name, :description, :link, :documentation_link
+  # binding.pry
+  #
+  # def attributes
+  #   data = super
+  #   binding.pry
+  #   data
+  # end
+
 end

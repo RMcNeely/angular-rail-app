@@ -4,4 +4,14 @@ class ResourceController < ApplicationController
     resource = Resource.find_by_id(params[:id])
     render json: resource
   end
+
+  def index
+    resources = Resource.all
+    render json: resources
+  end
+
+  def new
+
+  end
+
 end

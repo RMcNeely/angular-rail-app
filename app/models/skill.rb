@@ -14,4 +14,19 @@ class Skill < ActiveRecord::Base
     self.category == 'language' || self.category == 'framework'
   end
 
+  def self.get_skope(params)
+    # binding.pry
+      if params[:skope] == 'language'
+        @skills = Skill.language
+      elsif params[:skope] == 'framework'
+        @skills = Skill.framework
+      elsif params[:skope]== 'technology'
+        @skills = Skill.technology
+      elsif params[:skope] == 'miscellaneous'
+        @skills = Skill.miscellaneous
+      else params[:skope] == nil
+        @skills = Skill.all
+    end
+  end
+
 end
