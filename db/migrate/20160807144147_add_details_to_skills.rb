@@ -5,5 +5,6 @@ class AddDetailsToSkills < ActiveRecord::Migration
     add_column :skills, :description, :text
     add_column :skills, :link, :text
     add_column :skills, :documentation_link, :text
+    add_column :skills, :version, :text
   end
 end
