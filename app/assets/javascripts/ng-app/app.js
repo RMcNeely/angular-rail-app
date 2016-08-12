@@ -13,11 +13,17 @@ angular
         controllerAs: 'ctrl',
         templateUrl: 'about.html'
       })
-      .state('home.skope', {
+      .state('skope', {
         url: '/:skope/',
         controller: 'SkopeController as ctrl',
         // controllerAs: 'skope',
         templateUrl: 'skope.html'
+      })
+      .state('resources', {
+        url: '/resources',
+        controller: 'ResourceController',
+        controllerAs: 'ctrl',
+        templateUrl: 'resources.html'
       })
 
 

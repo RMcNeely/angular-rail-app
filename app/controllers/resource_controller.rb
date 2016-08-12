@@ -6,6 +6,7 @@ class ResourceController < ApplicationController
   end
 
   def index
+    # binding.pry
     resources = Resource.all
     render json: resources
   end

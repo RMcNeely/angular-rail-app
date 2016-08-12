@@ -6,6 +6,7 @@ function SkopeService($resource) {
   return   SkopeResource.query({skope: skopeName}, function(data){
       console.log(skopeName)
       console.log(data)
+
     })
   }
   // debugger
