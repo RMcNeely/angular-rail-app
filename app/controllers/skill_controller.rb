@@ -1,6 +1,6 @@
 class SkillController < ApplicationController
   def show
-    # binding.pry
+    binding.pry
     skill = Skill.find_by_id(params[:id])
     render json: skill
   end

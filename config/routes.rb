@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'application#home'
   # get '*path' => 'application#home'
+  namespace :api, defaults: {format: :json} do
+    resources :skills, :resources, only: [:index, :show, :new, :update, :destroy]
+  end
+
+
   get 'resource' => 'resource#show'
   get 'all-resources' => 'resource#index'
   post 'new-resource' => 'resource#new'

@@ -1,5 +1,5 @@
 angular
-  .module('app', [ 'ui.router', 'ngAnimate', 'templates' ])
+  .module('app', [ 'ui.router', 'ngAnimate', 'templates', 'ngRoute', 'ngResource' ])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
@@ -10,39 +10,17 @@ angular
       .state('home.about', {
         url: '/about',
         controller: 'SkillController',
+        controllerAs: 'ctrl',
         templateUrl: 'about.html'
       })
-      .state('skopes', {
-        url: 'skopes',
-        controller: 'SkopeController',
-        templateUrl: 'skope.html'
-      })
-      // .state('skopes.skope', {
-      //   url: 'skopes/:skope',
-      //   controller: 'SkopeController',
-      //   templateUrl: 'skope/show.html'
-      // })
       .state('home.skope', {
         url: '/:skope/',
-        controller: 'SkopeController',
+        controller: 'SkopeController as ctrl',
+        // controllerAs: 'skope',
         templateUrl: 'skope.html'
       })
-      // .state('home.skope', {
-      //   url: '/:skope',
-      //   controller: 'SkopeController',
-      //   controllerAs: 'skope',
-      //   templateUrl: 'skope.html'
-      // })
-      .state('home.technology', {
-        url: '/technology',
-        controller: 'SkillController',
-        templateUrl: 'technology.html'
-      })
-      .state('home.miscellaneous', {
-        url: '/miscellaneous',
-        controller: 'SkillController',
-        templateUrl: 'miscellaneous.html'
-      })
+
+
 
       // default fall back route
   //  $urlRouterProvider.otherwise('/');

@@ -13,4 +13,5 @@
  * require_tree .
  *= require_self
  *= require materialize.scss
+ *= require skope.scss
  */
