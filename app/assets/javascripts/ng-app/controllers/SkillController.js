@@ -1,4 +1,7 @@
-function SkillController() {
+function SkillController($scope, $state, $stateParams) {
+
+  var self = $scope
+  console.log('This log event has fired')
 
 }
 

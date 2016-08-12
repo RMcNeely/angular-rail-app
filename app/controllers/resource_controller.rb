@@ -15,3 +15,6 @@ class ResourceController < ApplicationController
   end
 
 end
+
+
+#  https://zoom.us/j/331554631

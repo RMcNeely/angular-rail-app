@@ -7,21 +7,32 @@ angular
         controller:'SkillController',
         templateUrl: 'home.html'
       })
-      .state('about', {
+      .state('home.about', {
         url: '/about',
         controller: 'SkillController',
         templateUrl: 'about.html'
       })
-      .state('home.language', {
-        url: '/language',
-        controller: 'SkillController',
-        templateUrl: 'language.html'
-      })
-      .state('home.skope', {
-        url: '/:skope',
+      .state('skopes', {
+        url: 'skopes',
         controller: 'SkopeController',
         templateUrl: 'skope.html'
       })
+      // .state('skopes.skope', {
+      //   url: 'skopes/:skope',
+      //   controller: 'SkopeController',
+      //   templateUrl: 'skope/show.html'
+      // })
+      .state('home.skope', {
+        url: '/:skope/',
+        controller: 'SkopeController',
+        templateUrl: 'skope.html'
+      })
+      // .state('home.skope', {
+      //   url: '/:skope',
+      //   controller: 'SkopeController',
+      //   controllerAs: 'skope',
+      //   templateUrl: 'skope.html'
+      // })
       .state('home.technology', {
         url: '/technology',
         controller: 'SkillController',
