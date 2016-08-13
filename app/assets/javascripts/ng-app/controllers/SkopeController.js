@@ -3,6 +3,15 @@ function SkopeController($scope, $stateParams,  SkopeService) {
   console.log($stateParams)
   console.log('The Skope Controller has fired')
 
+  $scope.$watch($stateParams, function(){
+    debugger
+     if($stateParams.skill){
+      ctrl.check = true
+    } else {
+      ctrl.check = false
+    }
+  })
+
 
   var sp = Object.create($stateParams)
   ctrl.skopeName = sp.skope

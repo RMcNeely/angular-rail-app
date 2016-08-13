@@ -4,7 +4,7 @@ angular
     $stateProvider
       .state('home', {
         url: '/home',
-        controller:'SkillController',
+        controller:'HomeController',
         templateUrl: 'home.html'
       })
       .state('home.about', {
@@ -14,16 +14,28 @@ angular
         templateUrl: 'about.html'
       })
       .state('skope', {
-        url: '/:skope/',
+        url: '/:skope',
         controller: 'SkopeController as ctrl',
         // controllerAs: 'skope',
         templateUrl: 'skope.html'
       })
-      .state('resources', {
-        url: '/resources',
+      .state('skope.resources', {
+        url: '/:skill/resources',
         controller: 'ResourceController',
         controllerAs: 'ctrl',
         templateUrl: 'resources.html'
+      })
+      .state('all-resources', {
+        url: '/all-resources',
+        controller: 'ResourceController',
+        controllerAs: 'ctrl',
+        templateUrl: 'resources.html'
+      })
+      .state('state.new', {
+        url: '/:skope/new',
+        controller 'SkopeController',
+        controllerAs: 'ctrl',
+        templateUrl: 'new-skill.html'
       })
 
 
