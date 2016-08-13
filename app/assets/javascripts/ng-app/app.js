@@ -1,5 +1,5 @@
 angular
-  .module('app', [ 'ui.router', 'ngAnimate', 'templates', 'ngRoute', 'ngResource' ])
+  .module('app', [ 'ui.router', 'ngAnimate', 'templates', 'ngRoute', 'ngResource', 'ngMessages' ])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
@@ -17,7 +17,7 @@ angular
         url: '/:skope',
         controller: 'SkopeController as ctrl',
         // controllerAs: 'skope',
-        templateUrl: 'skope.html'
+        templateUrl: 'skope/skope.html'
       })
       .state('skope.resources', {
         url: '/:skill/resources',
@@ -31,11 +31,11 @@ angular
         controllerAs: 'ctrl',
         templateUrl: 'resources.html'
       })
-      .state('state.new', {
-        url: '/:skope/new',
-        controller 'SkopeController',
+      .state('skope.new', {
+        url: '/new',
+        controller: 'SkopeController',
         controllerAs: 'ctrl',
-        templateUrl: 'new-skill.html'
+        templateUrl: 'skope/new-skill.html'
       })
 
 
