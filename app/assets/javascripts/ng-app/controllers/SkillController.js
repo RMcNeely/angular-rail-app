@@ -1,9 +1,21 @@
-function SkillController($scope, $state, $stateParams) {
+function SkillController($scope, $state, $stateParams, Skill) {
+  var ctrl = this
+  debugger
+  console.log('Thes SkillController has fired')
 
-  var self = $scope
-  console.log('This log event has fired')
+  ctrl.formSubmit = function() {
+    ctrl.newSkill.skope = skopeNameVar
+    debugger
+    ctrl.newSkill.$save(function(){
+      $state('skope')
+    })
+  }
+  ctrl.newSkill =  new Skill()
 
+  ctrl.skills = Skill.query()
 }
+
+SkillController.$inject = ['$scope', '$stateParams',  'SkopeService', 'Skill']
 
 angular
   .module('app')

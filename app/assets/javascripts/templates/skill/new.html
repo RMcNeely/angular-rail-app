@@ -1,0 +1,80 @@
+<div >
+  test test test
+  <form name=newSkill ng-submit="ctrl.formSubmit(newSkill)">
+    <input type="hidden" name="name" value="{{ctrl.skopeName}}" ng-model="ctrl.newSkill.skope">
+    <input ng-model='ctrl.newSkill.name'
+      type="text"
+      name="name"
+      required="required" />
+
+
+        <div ngMessages="form.newSkill.name.$error">
+            <div ngMessages="required">
+                A name is required!
+            </div>
+        </div>
+
+
+
+    <input ng-model='ctrl.newSkill.description'
+      type="text"
+      name="description"
+      minlength='20'
+      required="required" />
+
+      <div ngMessages="form.newSkill.description.$error">
+          <div ngMessages="required">
+              A description is required!
+          </div>
+          <div ngMessages="minlength">
+            The description must be long enough!
+          </div>
+      </div>
+
+    <input ng-model='ctrl.newSkill.link'
+      type="url"
+      name="link"
+      minlength="6"
+      required="required" />
+
+      <div ngMessages="form.newSkill.link.$error">
+          <div ngMessages="required">
+              A link is required!
+          </div>
+          <div ngMessages="minlength">
+            The link must be long enough!
+          </div>
+      </div>
+
+    <input ng-model='ctrl.newSkill.documentationLink'
+      type="url"
+      name="documentationLink"/>
+      {{ctrl.skopeName}}
+
+      <!-- <div ngMessages="form.newSkillDocumentationLink.$error">
+
+          <div ngMessages="required">
+              A document link is required!
+          </div>
+          <div ngMessages="minlength">
+            The link must be long enough!
+          </div>
+        </span>
+      </div> -->
+
+    <input ng-model='ctrl.newSkill.version'
+      type="text"
+      name="version" />
+
+    <!-- <button ng-submit=ctrl.newSkill class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+    </button> -->
+
+    <input
+          class="waves-effect deep-orange btn below "
+          type="submit"
+          value="Create"  />
+
+  </form>
+
+</div>

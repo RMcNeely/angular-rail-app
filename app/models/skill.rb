@@ -15,7 +15,7 @@ class Skill < ActiveRecord::Base
   end
 
   def self.get_skope(params)
-    params[:skope] = params[:skope].slice(10..-3)
+
     # binding.pry
       if params[:skope] == 'language'
         @skills = Skill.language

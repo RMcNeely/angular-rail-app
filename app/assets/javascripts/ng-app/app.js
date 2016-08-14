@@ -13,30 +13,30 @@ angular
         controllerAs: 'ctrl',
         templateUrl: 'about.html'
       })
-      .state('skope', {
-        url: '/:skope',
-        controller: 'SkopeController as ctrl',
-        // controllerAs: 'skope',
-        templateUrl: 'skope/skope.html'
+      .state('skill', {
+        url: '/skills',
+        controller: 'SkillController as ctrl',
+        templateUrl: 'skill/skills.html'
       })
-      .state('skope.resources', {
-        url: '/:skill/resources',
+      .state('skill.resources', {
+        url: '/skill/resources',
         controller: 'ResourceController',
         controllerAs: 'ctrl',
         templateUrl: 'resources.html'
       })
-      .state('all-resources', {
-        url: '/all-resources',
+      .state('resources', {
+        url: '/resources',
         controller: 'ResourceController',
         controllerAs: 'ctrl',
         templateUrl: 'resources.html'
       })
-      .state('skope.new', {
+      .state('skill.new', {
         url: '/new',
         controller: 'SkopeController',
         controllerAs: 'ctrl',
-        templateUrl: 'skope/new-skill.html'
+        templateUrl: 'skil/new.html'
       })
+
 
 
 
