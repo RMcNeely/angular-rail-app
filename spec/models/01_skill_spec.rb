@@ -16,8 +16,8 @@ describe 'Skill' do
     expect(@stack_overflow).to be_valid
     expect(@command_line).to be_valid
     expect(@sinatra).to be_valid
+    expect(@ruby).to be_valid
     expect(@angular).to_not be_valid
-    expect(@ruby).to_not be_valid
   end
 
   it "expects category scopes to be correct" do
@@ -35,7 +35,7 @@ describe 'Skill' do
   it "has many resources" do
     @sinatra.save
     3.times do
-      Resource.create(link: Faker::Internet.url, skill_id: @sinatra.id, text: Faker::ChuckNorris.fact)
+      Resource.create(link: Faker::Internet.url, skill_id: @sinatra.id, text: Faker::ChuckNorris.fact, name: Faker::Book.title)
     end
     expect(@sinatra.resources.count).to eq(3)
   end

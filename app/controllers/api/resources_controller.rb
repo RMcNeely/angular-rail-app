@@ -1,13 +1,8 @@
-class ResourceController < ApplicationController
-  def show
-    binding.pry
-    resource = Resource.find_by_id(params[:id])
-    render json: resource
-  end
+class Api::ResourcesController < ApplicationController
 
   def index
     # binding.pry
-    resources = Resource.get_resources(params)
+    resources = Resource.all
     render json: resources
   end
 

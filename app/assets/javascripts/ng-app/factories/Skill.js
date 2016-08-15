@@ -1,17 +1,10 @@
 function Skill($resource, $stateParams) {
-  debugger
-  var cheating = window.location.hash.slice(2)
-  var Skill = $resource('/api/skills' )
-  //
-  // this.getSkope = function(skopeName, callback) {
-  // return   SkopeResource.query({skope: skopeName}, function(data){
-  //     console.log(skopeName)
-  //     console.log(data)
-  //
-  //   })
-  // }
+  // debugger
+  console.log("Skill factory checking in")
+  console.log($resource)
+  console.log($stateParams)
+  return Skill = $resource('/api/skills/:id', {id: '@id'}, {method: 'PUT'} )
 
-  return Skill
 }
 Skill.$inject = ['$resource', '$stateParams']
 angular

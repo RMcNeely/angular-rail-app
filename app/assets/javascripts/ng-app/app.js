@@ -1,6 +1,6 @@
 angular
   .module('app', [ 'ui.router', 'ngAnimate', 'templates', 'ngRoute', 'ngResource', 'ngMessages' ])
-  .config(function($stateProvider, $urlRouterProvider){
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider){
     $stateProvider
       .state('home', {
         url: '/home',
@@ -13,28 +13,34 @@ angular
         controllerAs: 'ctrl',
         templateUrl: 'about.html'
       })
-      .state('skill', {
+      .state('home.skill', {
         url: '/skills',
         controller: 'SkillController as ctrl',
         templateUrl: 'skill/skills.html'
       })
-      .state('skill.resources', {
-        url: '/skill/resources',
+      .state('home.skill.resources', {
+        url: '/skill/:id/resources',
         controller: 'ResourceController',
         controllerAs: 'ctrl',
         templateUrl: 'resources.html'
       })
-      .state('resources', {
+      .state('home.skill.new', {
+        url: '/new',
+        controller: 'SkillController',
+        controllerAs: 'ctrl',
+        templateUrl: 'skill/new.html'
+      })
+      .state('home.resources', {
         url: '/resources',
         controller: 'ResourceController',
         controllerAs: 'ctrl',
-        templateUrl: 'resources.html'
+        templateUrl: 'resources/resources.html'
       })
-      .state('skill.new', {
+      .state('home.resources.new', {
         url: '/new',
-        controller: 'SkopeController',
+        controller: 'ResourceController',
         controllerAs: 'ctrl',
-        templateUrl: 'skil/new.html'
+        templateUrl: 'resources/new.html'
       })
 
 
@@ -44,6 +50,6 @@ angular
   //  $urlRouterProvider.otherwise('/');
 
   //  // enable HTML5 Mode for SEO
-  //  $locationProvider.html5Mode(true);
+  //  $locationProvider.html5Mode({enabled: true, requireBase: false});
 
   })

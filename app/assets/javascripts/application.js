@@ -19,6 +19,7 @@
 //= require angular-messages
 //= require_tree ./templates
 //= require jquery
+// require skill-new.js
 //= require jquery_ujs
 // require turbolinks
 //= require_tree ./ng-app

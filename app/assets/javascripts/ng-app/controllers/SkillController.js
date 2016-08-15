@@ -1,21 +1,29 @@
-function SkillController($scope, $state, $stateParams, Skill) {
+function SkillController($scope, $state, $stateParams, Skill, $location) {
   var ctrl = this
   debugger
-  console.log('Thes SkillController has fired')
-
+  console.log('The SkillController has fired')
+  console.log($state)
+  console.log($stateParams)
+  console.log(ctrl)
   ctrl.formSubmit = function() {
-    ctrl.newSkill.skope = skopeNameVar
+    console.log($state)
+    console.log($stateParams)
+    console.log(ctrl)
+    console.log(ctrl.newSkill)
     debugger
-    ctrl.newSkill.$save(function(){
-      $state('skope')
-    })
+    Skill.save(ctrl.newSkill)
+    $location.path('home/skills')
+    Skill.query()
   }
-  ctrl.newSkill =  new Skill()
 
+  // ctrl.nested = NestedResources.query(newSkill.id)
   ctrl.skills = Skill.query()
+
+  ctrl.categories = ['language', 'framework', 'technology', 'miscellaneous']
+  console.log(ctrl.newSkill)
 }
 
-SkillController.$inject = ['$scope', '$stateParams',  'SkopeService', 'Skill']
+SkillController.$inject = ['$scope', '$stateParams', 'SkillService', 'Skill', '$location']
 
 angular
   .module('app')

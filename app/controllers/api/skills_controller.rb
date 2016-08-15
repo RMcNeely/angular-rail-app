@@ -3,26 +3,57 @@ class Api::SkillsController < ApplicationController
   skip_before_filter :verify_authenticity_token
   respond_to :json
 
-  def show
-    binding.pry
-    skill = Skill.find_by_id(params[:id])
-    render json: skill
-  end
-
   def index
-    # binding.pry
-    @skills = Skill.get_skope(params)
-    render json: @skills, root: true
+    respond_with Skill.all
   end
 
-  def new
-    skill = Skill.create(name: params[:name], description: params[:description], link: params[:link], documentation_link: params[:documentationLink], version: params[:version], category: params[:skope].slice(0..-5))
-    binding.pry
-    @skills = Skill.get_skope(params)
-    render json: @skills, root: true
+  def show
+    respond_with Skill.find(params[:id])
   end
+
+  def create
+    binding.pry
+    s = Skill.create(skill_params)
+    render json: s
+
+  end
+
+  def edit
+    respond_with Skill.update(skill_params)
+  end
+
+  def destroy
+    respond_with Skill.destroy(params[:id])
+  end
+
+  #
+  #
+  #
+  # def show
+  #   binding.pry
+  #   skill = Skill.find_by_id(params[:id])
+  #   render json: skill
+  # end
+  #
+  # def index
+  #   # binding.pry
+  #   @skills = Skill.get_skope(params)
+  #   render json: @skills, root: true
+  # end
+  #
+  # def new
+  #   # skill = Skill.new
+  #   binding.pry
+  #   @skills = Skill.get_skope(params)
+  #   render json: @skills, root: true
+  # end
+  #
+  # def create
+  #   binding.pry
+  #   Skill.create(skill_params)
+  # end
 
   def skill_params
-    params.require(:skill).permit(:name, :description, :link, :documentationLink, :version, :skope )
+    params.require(:skill).permit(:name, :category, :description, :link, :documentation_link, :version)
   end
 end
