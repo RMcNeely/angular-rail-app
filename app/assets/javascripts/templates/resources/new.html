@@ -1,0 +1,62 @@
+<form name=newResource ng-submit="ctrl.formSubmit(ctrl.newResource)">
+
+  <div class="input-field">
+    <label for="newResource.name">Name:</label><br>
+    <input ng-model='ctrl.newResource.name'
+      type="text"
+      name="name"
+      required="required" />
+  </div>
+
+
+    <div ngMessages="form.newResource.name.$error" ng-if='newResource.name.$dirty'>
+          <div ngMessages="required">
+              A name is required!
+          </div>
+    </div>
+
+    <div class="input-field">
+      <label for="newResource.name">Description:</label><br><br>
+      <textarea ng-model='ctrl.newResource.description'
+        name="name"
+        minlength="20"
+        required="required"></textarea>
+
+        <div ngMessages="form.newResource.description.$error" ng-if='newResource.description.$dirty'>
+            <div ngMessages="required">
+                A description is required!
+            </div>
+            <div ngMessages="minlength">
+              The description must be long enough!
+            </div>
+        </div>
+    </div>
+
+    <div class="input-field">
+      <label for="newResource.link">Skill Link:</label><br>
+      <input ng-model='ctrl.newResource.link'
+        type="url"
+        name="link"
+        minlength="6"
+        required="required" />
+    </div>
+
+        <div ngMessages="form.newResource.link.$error" ng-if='newResource.link.$dirty'>
+            <div ngMessages="required">
+                A link is required!
+            </div>
+            <div ngMessages="minlength">
+              The link must be long enough!
+            </div>
+        </div>
+
+        <input ng-model='ctrl.newResource.skill_id'  name='group1' type="radio" id="test5" />
+      <label for="test5">Red</label>
+
+      <input ng-model='ctrl.newResource.skill_id' name='group1' type="radio" id="test4" />
+    <label for="test4">Yellow</label>
+
+    <input ng-model='ctrl.newResource.skill_id' type="radio" name='group1' id="test3" />
+  <label for="test3">Blue</label>
+
+</form>

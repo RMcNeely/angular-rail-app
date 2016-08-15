@@ -26,33 +26,6 @@ class Api::SkillsController < ApplicationController
     respond_with Skill.destroy(params[:id])
   end
 
-  #
-  #
-  #
-  # def show
-  #   binding.pry
-  #   skill = Skill.find_by_id(params[:id])
-  #   render json: skill
-  # end
-  #
-  # def index
-  #   # binding.pry
-  #   @skills = Skill.get_skope(params)
-  #   render json: @skills, root: true
-  # end
-  #
-  # def new
-  #   # skill = Skill.new
-  #   binding.pry
-  #   @skills = Skill.get_skope(params)
-  #   render json: @skills, root: true
-  # end
-  #
-  # def create
-  #   binding.pry
-  #   Skill.create(skill_params)
-  # end
-
   def skill_params
     params.require(:skill).permit(:name, :category, :description, :link, :documentation_link, :version)
   end

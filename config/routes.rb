@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
-    resources :skills do
-      resources :resources, only: [:index, :new, :create, :edit]
-    end
-    resources :resources
+    resources :skills, :resources, :tags, only: [:index, :new, :create, :edit]
     devise_for :users
   end
 
