@@ -14,6 +14,7 @@ class Api::SkillsController < ApplicationController
   def create
     binding.pry
     s = Skill.create(skill_params)
+    Skill.build_tags(params)
     render json: s
 
   end

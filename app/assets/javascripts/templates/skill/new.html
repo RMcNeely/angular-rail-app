@@ -84,6 +84,16 @@
       name="version" />
   </div>
 
+  <div class="input-field">
+    <span ng-repeat='resource in ctrl.resources'>
+      <input type="checkbox" checklist-model='ctrl.newSkill.tags' checklist-value='resource.id' id="{{resource.id}}" ng-change="check(resource, checked)">
+      <label for="{{resource.id}}">
+      {{resource.name}}
+      </label>
+    </span>
+  </div>
+    <br><br>
+
     <!-- <button ng-submit=ctrl.newSkill class="btn waves-effect waves-light" type="submit" name="action">Submit
       <i class="material-icons right">send</i>
     </button> -->
