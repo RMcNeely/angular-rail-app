@@ -13,12 +13,12 @@ class Api::ResourcesController < ApplicationController
 
   def create
     binding.pry
-    r = Resource.create(skill_params)
+    r = Resource.create(resource_params)
     render json: r
   end
 
   def edit
-    respond_with Resource.update(skill_params)
+    respond_with Resource.update(resource_params)
   end
 
   def destroy
@@ -26,6 +26,6 @@ class Api::ResourcesController < ApplicationController
   end
 
   def resource_params
-    params.require(:resource).permit(:name, :skill_id, :link, :text)
+    params.require(:resource).permit(:name, :link, :text, :tags => [])
   end
 end

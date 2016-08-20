@@ -17,12 +17,12 @@
 
     <div class="input-field">
       <label for="newResource.name">Description:</label><br><br>
-      <textarea ng-model='ctrl.newResource.description'
+      <textarea ng-model='ctrl.newResource.text'
         name="name"
         minlength="20"
         required="required"></textarea>
 
-        <div ngMessages="form.newResource.description.$error" ng-if='newResource.description.$dirty'>
+        <div ngMessages="form.newResource.text.$error" ng-if='newResource.text.$dirty'>
             <div ngMessages="required">
                 A description is required!
             </div>
@@ -50,13 +50,19 @@
             </div>
         </div>
 
-        <input ng-model='ctrl.newResource.skill_id'  name='group1' type="radio" id="test5" />
-      <label for="test5">Red</label>
+<div class="input-field">
+  <span ng-repeat='skill in ctrl.skills'>
+    <input type="checkbox" checklist-model='ctrl.newResource.tags' checklist-value='skill.id' id="{{skill.id}}" ng-change="check(skill, checked)">
+    <label for="{{skill.id}}">
+    {{skill.name}}
+    </label>
+  </span>
+</div>
+  <br><br>
 
-      <input ng-model='ctrl.newResource.skill_id' name='group1' type="radio" id="test4" />
-    <label for="test4">Yellow</label>
-
-    <input ng-model='ctrl.newResource.skill_id' type="radio" name='group1' id="test3" />
-  <label for="test3">Blue</label>
+  <input
+        class="waves-effect deep-orange btn below "
+        type="submit"
+        value="Create"  />
 
 </form>

@@ -1,6 +1,6 @@
 function SkillController($scope, $state, $stateParams, Skill, $location) {
   var ctrl = this
-  debugger
+  // debugger
   console.log('The SkillController has fired')
   console.log($state)
   console.log($stateParams)
@@ -18,12 +18,13 @@ function SkillController($scope, $state, $stateParams, Skill, $location) {
 
   // ctrl.nested = NestedResources.query(newSkill.id)
   ctrl.skills = Skill.query()
+  ctrl.resources = Resource.query()
 
   ctrl.categories = ['language', 'framework', 'technology', 'miscellaneous']
   console.log(ctrl.newSkill)
 }
 
-SkillController.$inject = ['$scope', '$stateParams', 'SkillService', 'Skill', '$location']
+SkillController.$inject = ['$scope', '$stateParams', '$resource', 'Skill', 'Resource', '$location']
 
 angular
   .module('app')

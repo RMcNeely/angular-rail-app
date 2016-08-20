@@ -10,7 +10,7 @@ function HomeController($scope, $stateParams,  ResourceService) {
   // debugger
 }
 
-HomeController.$inject = ['$scope', '$stateParams',  'ResourceService']
+HomeController.$inject = ['$scope', '$stateParams' ]
 angular
   .module('app')
   .controller('HomeController', HomeController)

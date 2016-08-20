@@ -18,6 +18,7 @@
 //= require angular-resource
 //= require angular-messages
 //= require_tree ./templates
+//=require checklist-model
 //= require jquery
 // angular-material
 // require skill-new.js
