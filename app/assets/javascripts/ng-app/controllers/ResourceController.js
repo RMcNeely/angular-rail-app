@@ -1,17 +1,23 @@
-function ResourceController($scope, $stateParams,  ResourceService) {
+function ResourceController($scope, $stateParams,  ResourceService, Resource, Skill, $location) {
   var ctrl = this
   console.log($stateParams)
   console.log('The Resource Controller has fired')
   // debugger
+  ctrl.formSubmit = function() {
+    console.log($stateParams)
+    console.log(ctrl)
+    console.log(ctrl.newResource)
+    debugger
+    Resource.save(ctrl.newResource)
+    $location.path('home/resources')
+    Resource.query()
+  }
 
-  var sp = Object.create($stateParams)
-  ctrl.skopeName = sp.skope || 'nil'
-  var skopeNameVar = ctrl.skopeName.toString()
-  var skillId = sp.skill || 'nil'
-  ctrl.resources = ResourceService.getResource({skope: skopeNameVar, skill: skillId})
+  ctrl.resources = Resource.query()
+  ctrl.skills = Skill.query()
 }
 
-ResourceController.$inject = ['$scope', '$stateParams',  'ResourceService']
+ResourceController.$inject = ['$scope', '$stateParams',  '$resource', 'Resource', 'Skill', '$location']
 angular
   .module('app')
   .controller('ResourceController', ResourceController)

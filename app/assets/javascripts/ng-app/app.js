@@ -1,6 +1,6 @@
 angular
-  .module('app', [ 'ui.router', 'ngAnimate', 'templates', 'ngRoute', 'ngResource', 'ngMessages' ])
-  .config(function($stateProvider, $urlRouterProvider){
+  .module('app', [ 'ui.router', 'ngAnimate', 'templates', 'ngRoute', 'ngResource', 'ngMessages', 'checklist-model' ])
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider){
     $stateProvider
       .state('home', {
         url: '/home',
@@ -13,30 +13,36 @@ angular
         controllerAs: 'ctrl',
         templateUrl: 'about.html'
       })
-      .state('skope', {
-        url: '/:skope',
-        controller: 'SkopeController as ctrl',
-        // controllerAs: 'skope',
-        templateUrl: 'skope/skope.html'
+      .state('home.skill', {
+        url: '/skills',
+        controller: 'SkillController as ctrl',
+        templateUrl: 'skill/skills.html'
       })
-      .state('skope.resources', {
-        url: '/:skill/resources',
+      .state('home.skill.resources', {
+        url: '/skill/:id/resources',
         controller: 'ResourceController',
         controllerAs: 'ctrl',
         templateUrl: 'resources.html'
       })
-      .state('all-resources', {
-        url: '/all-resources',
-        controller: 'ResourceController',
-        controllerAs: 'ctrl',
-        templateUrl: 'resources.html'
-      })
-      .state('skope.new', {
+      .state('home.skill.new', {
         url: '/new',
-        controller: 'SkopeController',
+        controller: 'SkillController',
         controllerAs: 'ctrl',
-        templateUrl: 'skope/new-skill.html'
+        templateUrl: 'skill/new.html'
       })
+      .state('home.resources', {
+        url: '/resources',
+        controller: 'ResourceController',
+        controllerAs: 'ctrl',
+        templateUrl: 'resources/resources.html'
+      })
+      .state('home.resources.new', {
+        url: '/new',
+        controller: 'ResourceController',
+        controllerAs: 'ctrl',
+        templateUrl: 'resources/new.html'
+      })
+
 
 
 
@@ -44,6 +50,6 @@ angular
   //  $urlRouterProvider.otherwise('/');
 
   //  // enable HTML5 Mode for SEO
-  //  $locationProvider.html5Mode(true);
+  //  $locationProvider.html5Mode({enabled: true, requireBase: false});
 
   })
