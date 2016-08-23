@@ -11,9 +11,11 @@ class Skill < ActiveRecord::Base
   scope :miscellaneous, -> { where(category: 'miscellaneous') }
 
   def self.build_tags(params)
-    params[:tags].each do |id|
-      binding.pry
-      self.last.tags.create(resource_id: id)
+    if params[:tags]
+      params[:tags].each do |id|
+        binding.pry
+        self.last.tags.create(skill_id: id)
+      end
     end
   end
 

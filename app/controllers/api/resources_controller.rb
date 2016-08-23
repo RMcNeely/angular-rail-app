@@ -12,7 +12,7 @@ class Api::ResourcesController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     r = Resource.create(resource_params)
     Resource.build_tags(params)
     render json: r
