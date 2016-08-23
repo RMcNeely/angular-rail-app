@@ -26,7 +26,7 @@ angular
       })
       .state('home.skill.new', {
         url: '/new',
-        controller: 'SkillController',
+        controller: 'NewSkillController',
         controllerAs: 'ctrl',
         templateUrl: 'skill/new.html'
       })
@@ -38,16 +38,13 @@ angular
       })
       .state('home.resources.new', {
         url: '/new',
-        controller: 'ResourceController',
+        controller: 'NewResourceController',
         controllerAs: 'ctrl',
         templateUrl: 'resources/new.html'
       })
 
-
-
-
-      // default fall back route
-  //  $urlRouterProvider.otherwise('/');
+      //Default Fallback Route
+      $urlRouterProvider.otherwise('home')
 
   //  // enable HTML5 Mode for SEO
   //  $locationProvider.html5Mode({enabled: true, requireBase: false});
