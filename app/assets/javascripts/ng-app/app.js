@@ -16,25 +16,35 @@ angular
       .state('home.skill', {
         url: '/skills',
         controller: 'SkillController as ctrl',
-        templateUrl: 'skill/skills.html'
+        templateUrl: 'skills/skills.html'
       })
-      .state('home.skill.resources', {
-        url: '/skill/:id/resources',
+      .state('skill', {
+        url: '/skill/:id',
+        controller: 'SkillController as ctrl',
+        templateUrl: 'skills/show.html'
+      })
+      .state('skill.resources', {
+        url: '/resources',
         controller: 'ResourceController',
         controllerAs: 'ctrl',
-        templateUrl: 'resources.html'
+        templateUrl: 'resources/show.html'
       })
       .state('home.skill.new', {
         url: '/new',
         controller: 'NewSkillController',
         controllerAs: 'ctrl',
-        templateUrl: 'skill/new.html'
+        templateUrl: 'skills/new.html'
       })
       .state('home.resources', {
         url: '/resources',
         controller: 'ResourceController',
         controllerAs: 'ctrl',
         templateUrl: 'resources/resources.html'
+      })
+      .state('resource', {
+        url: '/resource/:id',
+        controller: 'ResourceController as ctrl',
+        templateUrl: 'resources/show.html'
       })
       .state('home.resources.new', {
         url: '/new',
