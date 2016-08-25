@@ -1,4 +1,4 @@
-function SkillController($scope, $stateParams, $resource, Skill, Resource, $location) {
+function SkillController($scope, $stateParams, $resource, Skill, ResourceObject, $location) {
   var ctrl = this
   // debugger
   console.log('The SkillController has fired')
@@ -6,15 +6,15 @@ function SkillController($scope, $stateParams, $resource, Skill, Resource, $loca
   console.log($stateParams)
   console.log(ctrl)
 
-  // ctrl.nested = NestedResources.query(newSkill.id)
+  // ctrl.nested = NestedResourceObjects.query(newSkill.id)
   ctrl.skills = Skill.query()
-  ctrl.resources = Resource.query()
+  ctrl.resources = ResourceObject.query()
   if ($stateParams.id) {
     ctrl.skill = Skill.get({id: $stateParams.id})
   }
 }
 
-SkillController.$inject = ['$scope', '$stateParams', '$resource', 'Skill', 'Resource', '$location']
+SkillController.$inject = ['$scope', '$stateParams', '$resource', 'Skill', 'ResourceObject', '$location']
 
 angular
   .module('app')

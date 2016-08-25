@@ -1,17 +1,17 @@
-function ResourceController($scope, $stateParams,  ResourceService, Resource, Skill, $location) {
+function ResourceController($scope, $stateParams,  $resource, ResourceObject, Skill, $location) {
   var ctrl = this
   console.log($stateParams)
   console.log('The Resource Controller has fired')
 
-  ctrl.resources = Resource.query()
+  ctrl.resources = ResourceObject.query()
   ctrl.skills = Skill.query()
   if ($stateParams.id) {
-    ctrl.resource = Resource.get({id: $stateParams.id})
+    ctrl.resource = ResourceObject.get({id: $stateParams.id})
   }
 
 }
 
-ResourceController.$inject = ['$scope', '$stateParams',  '$resource', 'Resource', 'Skill', '$location']
+ResourceController.$inject = ['$scope', '$stateParams',  '$resource', 'ResourceObject', 'Skill', '$location']
 angular
   .module('app')
   .controller('ResourceController', ResourceController)

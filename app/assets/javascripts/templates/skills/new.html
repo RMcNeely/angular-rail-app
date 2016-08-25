@@ -1,0 +1,108 @@
+<div >
+  <h4>Add a new Skill:</h4>
+  <form name=newSkill ng-submit="ctrl.formSubmit(ctrl.newSkill)">
+
+  <div class="input-field">
+    <label for="newSkill.name">Name:</label><br>
+    <input ng-model='ctrl.newSkill.name'
+      type="text"
+      name="name"
+      required="required" />
+  </div>
+
+
+        <div ngMessages="form.newSkill.name.$error" ng-if='newSkill.name.$dirty'>
+            <div ngMessages="required">
+                A name is required!
+            </div>
+        </div><br><br>
+
+    <div class="input-field">
+      <label>Select Category:</label><br><br>
+        <!-- <input ng-model=ctrl.newSkill.category class='text' name="category" value="category"> -->
+        <select ng-model='ctrl.newSkill.category' class='browser-default' >
+          <option ng-option="cat.value in ctrl.categories">{{cat.value}}</option>
+            <option value="" disabled selected>Choose your option</option>
+            <option name='language' value="language">Language</option>
+            <option name='framework' value="framework">Framework</option>
+            <option value="technology">Technology</option>
+            <option value="miscellaneous">Miscellaneous</option>
+          </select>
+
+    </div><br>
+
+
+  <div class="input-field">
+    <label for="newSkill.description">Description:</label><br><br>
+    <textarea ng-model='ctrl.newSkill.description'
+      name="name"
+      minlength="20"
+      required="required"></textarea>
+  </div>
+
+      <div ngMessages="form.newSkill.description.$error" ng-if='newSkill.description.$dirty'>
+          <div ngMessages="required">
+              A description is required!
+          </div>
+          <div ngMessages="minlength">
+            The description must be long enough!
+          </div>
+      </div>
+
+
+  <div class="input-field">
+    <label for="newSkill.link">Skill Link:</label><br>
+    <input ng-model='ctrl.newSkill.link'
+      type="url"
+      name="link"
+      minlength="6"
+      required="required" />
+  </div>
+
+      <div ngMessages="form.newSkill.link.$error" ng-if='newSkill.link.$dirty'>
+          <div ngMessages="required">
+              A link is required!
+          </div>
+          <div ngMessages="minlength">
+            The link must be long enough!
+          </div>
+      </div>
+
+
+  <div class="input-field">
+    <label for="newSkill.documentation_link">Documentation Link:</label><br>
+    <input ng-model='ctrl.newSkill.documentation_link'
+      type="url"
+      name="documentationLink"/>
+      {{ctrl.skopeName}}
+  </div>
+
+  <div class="input-field">
+    <label for="newSkill.version">Version (if applicable):</label><br>
+    <input ng-model='ctrl.newSkill.version'
+      type="text"
+      name="version" />
+  </div>
+
+  <div class="input-field">
+    <span ng-repeat='resource in ctrl.resources'>
+      <input type="checkbox" checklist-model='ctrl.newSkill.tags' checklist-value='resource.id' id="{{resource.id}}" ng-change="check(resource, checked)">
+      <label for="{{resource.id}}">
+      {{resource.name}}
+      </label>
+    </span>
+  </div>
+    <br><br>
+
+    <!-- <button ng-submit=ctrl.newSkill class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+    </button> -->
+
+    <input
+          class="waves-effect deep-orange btn below "
+          type="submit"
+          value="Create"  />
+
+  </form>
+
+</div>
