@@ -3,12 +3,12 @@
       <div class="card blue-grey darken-1" >
         <div class="card-content white-text">
           <span class="card-title">{{ctrl.resource.name}}</span>
-          <p>{{ctrl.resource.text}}</p>
+          <p>{{ctrl.resource.description}}</p>
         </div>
         <div class="card-action">
           <a ng-href="{{ctrl.resource.link}}">Visit the  {{ctrl.resource.name}} website</a><br>
           <a ng-href="{{ctrl.resource.documentation_link}}" target="_blank" ng-if ="ctrl.resource.documentation_link !=null" >Read the documentation</a><br>
-          <a href="#">Browse Resources</a>
+          <!-- <a href="#">Browse Resources</a> -->
           <div ui-view></div>
         </div>
       </div>

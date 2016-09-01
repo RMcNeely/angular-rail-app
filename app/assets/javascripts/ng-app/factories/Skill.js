@@ -1,13 +1,18 @@
-function Skill($resource, $stateParams) {
-  // debugger
+function Skill() {
+// debugger
+  var Skill = {
+      'id': '',
+      'name': '',
+      'category': '',
+      'description': '',
+      'link': '',
+      'documentation_link': '',
+      'version': '',
+      'tags': []
+    }
   console.log("Skill factory checking in")
-  console.log($resource)
-  // console.log($state)
-  console.log($stateParams)
-  return Skill = $resource('/api/skills/:id', {id: '@id'}, {method: 'PUT'} )
-
+  return Skill
 }
-Skill.$inject = ['$resource', '$stateParams']
 angular
-  .module('app')
-  .factory('Skill', Skill)
+.module('app')
+.factory('Skill', Skill)

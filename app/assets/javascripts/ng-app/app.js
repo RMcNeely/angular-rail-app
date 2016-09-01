@@ -19,7 +19,7 @@ angular
         templateUrl: 'skills/skills.html'
       })
       .state('skill', {
-        url: '/skill/:id',
+        url: '/skills/:id',
         controller: 'SkillController as ctrl',
         templateUrl: 'skills/show.html'
       })
@@ -42,7 +42,7 @@ angular
         templateUrl: 'resources/resources.html'
       })
       .state('resource', {
-        url: '/resource/:id',
+        url: '/resources/:id',
         controller: 'ResourceController as ctrl',
         templateUrl: 'resources/show.html'
       })

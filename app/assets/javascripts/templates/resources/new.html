@@ -1,3 +1,5 @@
+<div class="card blue-grey darken-1">
+
 <form name=newResource ng-submit="ctrl.formSubmit(ctrl.newResource)">
 
   <div class="input-field">
@@ -17,12 +19,12 @@
 
     <div class="input-field">
       <label for="newResource.name">Description:</label><br><br>
-      <textarea ng-model='ctrl.newResource.text'
+      <textarea ng-model='ctrl.newResource.description'
         name="name"
         minlength="20"
         required="required"></textarea>
 
-        <div ngMessages="form.newResource.text.$error" ng-if='newResource.text.$dirty'>
+        <div ngMessages="form.newResource.description.$error" ng-if='newResource.text.$dirty'>
             <div ngMessages="required">
                 A description is required!
             </div>
@@ -66,3 +68,5 @@
         value="Create"  />
 
 </form>
+
+</div>

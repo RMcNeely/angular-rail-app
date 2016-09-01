@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20160815052455) do
 
   create_table "resources", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "name"
-    t.text     "text"
+    t.text     "description"
     t.text     "link"
   end
 

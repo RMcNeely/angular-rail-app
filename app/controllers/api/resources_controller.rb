@@ -27,6 +27,6 @@ class Api::ResourcesController < ApplicationController
   end
 
   def resource_params
-    params.require(:resource).permit(:name, :link, :text, :tags => [])
+    params.require(:resource).permit(:name, :link, :description, tags:[])
   end
 end

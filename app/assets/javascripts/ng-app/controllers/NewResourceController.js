@@ -1,26 +1,18 @@
-function NewResourceController($scope, $resource, $state, $location, ResourceObject, Skill, $stateParams) {
+function NewResourceController($scope, $stateParams, ResourceObject, ResourceObjectService, SkillService, $state) {
   var ctrl= this
-
-  ctrl.newResource = new ResourceObject()
+  SkillService.query().then(function(response){
+      ctrl.skills = response.data
+  })
+  ctrl.newResource = ResourceObject
+  console.log(ResourceObject)
+  // debugger
   ctrl.formSubmit = function() {
-    console.log($state)
-    console.log($stateParams)
-    console.log(ctrl)
-    console.log(ctrl.newResource)
-    console.log(ResourceObject)
-    debugger
-    ResourceObject.save(ctrl.newResource, function(result){
-
-    // {
-      console.log(ctrl.newResource)
-      console.log(result)
-      debugger
-      $state.go('resource', {id: result.id})
-
+    ResourceObjectService.post(ctrl.newResource).success(function(response){
+      console.log(response)
+      $state.go('resource', {id: response.id})
+    }).error(function(error){
+      alert('Something went wrong. Try again.')
     })
-    // })
-    // $location.path('resource/:id')
-    // Resource.query()
   }
 }
 

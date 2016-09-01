@@ -1,5 +1,10 @@
 (function ($) {
 
+  // Show sideNav
+ $('.button-collapse').sideNav('show');
+ // Hide sideNav
+ $('.button-collapse').sideNav('hide');
+
   var methods = {
     init : function(options) {
       var defaults = {
