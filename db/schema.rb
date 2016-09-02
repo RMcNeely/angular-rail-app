@@ -11,25 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815052455) do
+ActiveRecord::Schema.define(version: 20160902155421) do
 
   create_table "resources", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.text     "name"
     t.text     "description"
     t.text     "link"
+    t.integer  "favorite",    default: 0
   end
 
   create_table "skills", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.text     "name"
     t.text     "category"
     t.text     "description"
     t.text     "link"
     t.text     "documentation_link"
     t.text     "version"
+    t.integer  "favorite",           default: 0
   end
 
   create_table "tags", force: :cascade do |t|

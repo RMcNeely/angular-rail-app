@@ -21,6 +21,10 @@
           <div class="card blue-grey darken-1" >
             <div class="card-content white-text">
               <a href="#" ui-sref='skill({id: skill.id})'><span class="card-title">{{skill.name}}</span></a>
+              <span id='favorite'>
+                <strong ng-click="ctrl.addFavorite(skill)">Favorite Me!</strong><br>
+                {{skill.favorite}} Favorites
+              </span>
               <p>{{skill.description}}</p>
             </div>
             <div class="card-action">

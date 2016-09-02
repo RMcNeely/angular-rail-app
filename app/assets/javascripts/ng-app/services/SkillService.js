@@ -13,6 +13,10 @@ function SkillService($http, $stateParams) {
     return $http.post(API + 'skills', newSkill)
   }
 
+  this.update = function(skill) {
+    return $http.put(API + 'skills/' + skill.id, skill)
+  }
+
 }
 SkillService.$inject = ['$http', '$stateParams']
 

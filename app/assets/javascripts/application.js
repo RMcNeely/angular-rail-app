@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require angular
 //= require angular-route
 //= require angular-ui-router
@@ -17,11 +18,17 @@
 //= require angular-rails-templates
 //= require angular-resource
 //= require angular-messages
+//= require angular-scroll
 //= require_tree ./templates
-//=require checklist-model
-//= require jquery
+//= require checklist-model
+//= require initial
+//= require scrollspy
 // angular-material
 // require skill-new.js
 //= require jquery_ujs
 // require turbolinks
 //= require_tree ./ng-app
+
+$(document).ready(function(){
+  $('.scrollspy').scrollSpy();
+});

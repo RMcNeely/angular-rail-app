@@ -1,5 +1,5 @@
 angular
-  .module('app', [ 'ui.router', 'ngAnimate', 'templates', 'ngRoute', 'ngResource', 'ngMessages', 'checklist-model' ])
+  .module('app', [ 'ui.router', 'ngAnimate', 'templates', 'ngRoute', 'ngResource', 'ngMessages', 'checklist-model', 'duScroll' ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider){
     $stateProvider
       .state('home', {

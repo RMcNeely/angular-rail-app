@@ -12,7 +12,6 @@ class Api::SkillsController < ApplicationController
   end
 
   def create
-    binding.pry
     s = Skill.create(skill_params)
     Skill.build_tags(params)
     render json: s
@@ -20,7 +19,13 @@ class Api::SkillsController < ApplicationController
   end
 
   def edit
+    # binding.pry
     respond_with Skill.update(skill_params)
+  end
+
+  def update
+    # binding.pry
+    respond_with Skill.update(params[:id] ,skill_params)
   end
 
   def destroy
@@ -28,6 +33,6 @@ class Api::SkillsController < ApplicationController
   end
 
   def skill_params
-    params.require(:skill).permit(:name, :category, :description, :link, :documentation_link, :version)
+    params.require(:skill).permit(:name, :category, :description, :link, :documentation_link, :version, :favorite, tags: [])
   end
 end
