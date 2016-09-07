@@ -17,6 +17,16 @@ function ResourceController($scope, $stateParams, ResourceObjectService, $docume
       })
   }
 
+  ctrl.addFavorite = function(skill){
+    skill.favorite ++
+    // debugger
+    ResourceObjectService.update(skill).success( function(response){
+      alert('Added this to your favorite Skill.')
+    }).error( function(error){
+      alert('Something went wrong. Try again.')
+    })
+  }
+
   // $document.scrollToElementAnimated('resources', 20, 40)
     // var someElement = angular.element(document.getElementById('resources'));
     // $document.scrollToElementAnimated(someElement);

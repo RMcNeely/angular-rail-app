@@ -12,6 +12,10 @@ function ResourceObjectService($http, $stateParams) {
   this.post = function(newResource){
     return $http.post(API + 'resources', newResource)
   }
+
+  this.update = function(resource) {
+    return $http.put(API + 'resources/' + resource.id, resource)
+  }
 }
 ResourceObjectService.$inject = ['$http', '$stateParams']
 

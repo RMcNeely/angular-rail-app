@@ -25,7 +25,11 @@ class Api::SkillsController < ApplicationController
 
   def update
     # binding.pry
-    respond_with Skill.update(params[:id] ,skill_params)
+    if skill_params[:favorite] < 0
+      render nothing: :true, status: 400
+    else
+      respond_with Skill.update(params[:id], skill_params)
+    end
   end
 
   def destroy

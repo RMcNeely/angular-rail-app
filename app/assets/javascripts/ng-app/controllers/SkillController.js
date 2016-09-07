@@ -28,6 +28,20 @@ function SkillController($scope, Skill, SkillService, $stateParams) {
       alert('Something went wrong. Try again.')
     })
   }
+
+  ctrl.decreaseFavorite = function(skill){
+    skill_hash = angular.copy(skill)
+    debugger;
+    skill_hash.favorite --
+    // debugger
+    SkillService.update(skill_hash).success( function(response){
+      skill.favorite --
+      alert('Removeded this from your favorite Skills.')
+    }).error( function(error){
+      alert('Something went wrong. You can\'t have less than 0 Favorites. Try again.')
+    })
+  }
+
 }
 
 SkillController.$inject = ['$scope', 'Skill', 'SkillService', '$stateParams']

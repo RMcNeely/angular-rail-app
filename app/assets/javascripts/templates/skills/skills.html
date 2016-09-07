@@ -26,6 +26,9 @@
                 {{skill.favorite}} Favorites
               </span>
               <p>{{skill.description}}</p>
+
+              <span id='favorite'>
+                <strong ng-click="ctrl.decreaseFavorite(skill)">Remove Favorite</strong><br>
             </div>
             <div class="card-action">
               <a ng-href="{{skill.link}}">Visit the  {{skill.name}} website</a><br>
