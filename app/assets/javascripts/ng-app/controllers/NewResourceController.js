@@ -16,7 +16,7 @@ function NewResourceController($scope, $stateParams, ResourceObject, ResourceObj
   }
 }
 
-
+NewResourceController.$inject=['$scope', '$stateParams', 'ResourceObject', 'ResourceObjectService', 'SkillService', '$state']
 angular
   .module('app')
   .controller('NewResourceController', NewResourceController)

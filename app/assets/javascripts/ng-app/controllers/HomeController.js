@@ -1,4 +1,4 @@
-function HomeController($scope, $stateParams,  ResourceService) {
+function HomeController($scope, $stateParams) {
   var ctrl = this
   console.log($stateParams)
   console.log('The Home Controller has fired')

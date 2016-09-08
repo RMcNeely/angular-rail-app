@@ -1,4 +1,4 @@
-function NewSkillController($scope, $state, $stateParams, $http, Skill, SkillService, ResourceObjectService, $location) {
+function NewSkillController($scope, $state, $stateParams, $http, Skill, SkillService, ResourceObjectService) {
   var ctrl = this
 
   ResourceObjectService.query().then(function(response){
@@ -16,7 +16,7 @@ function NewSkillController($scope, $state, $stateParams, $http, Skill, SkillSer
   }
 }
 
-NewSkillController.$inject = ['$scope', '$state', '$stateParams', '$http', 'Skill', 'SkillService', 'ResourceObjectService', '$location']
+NewSkillController.$inject = ['$scope', '$state', '$stateParams', '$http', 'Skill', 'SkillService', 'ResourceObjectService']
 
 angular
   .module('app')
