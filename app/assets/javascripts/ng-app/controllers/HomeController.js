@@ -1,6 +1,5 @@
 function HomeController($scope) {
   var ctrl = this
-  console.log($scope)
   console.log('The Home Controller has fired')
 
   // var sp = Object.create($stateParams)
