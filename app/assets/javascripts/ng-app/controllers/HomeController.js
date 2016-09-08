@@ -9,7 +9,6 @@ function HomeController($scope) {
   // debugger
 }
 
-HomeController.$inject = ['$scope' ]
 angular
   .module('app')
   .controller('HomeController', HomeController)
