@@ -8,7 +8,7 @@ function HomeController($scope) {
   // ctrl.resources = ResourceService.getResource()//{skope: skopeName})
   // debugger
 }
-
+HomeController.$inject = ['$scope']
 angular
   .module('app')
   .controller('HomeController', HomeController)
