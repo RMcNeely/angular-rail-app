@@ -1,6 +1,6 @@
-function HomeController($scope, $stateParams) {
+function HomeController($scope) {
   var ctrl = this
-  console.log($stateParams)
+  console.log($scope)
   console.log('The Home Controller has fired')
 
   // var sp = Object.create($stateParams)
@@ -10,7 +10,7 @@ function HomeController($scope, $stateParams) {
   // debugger
 }
 
-HomeController.$inject = ['$scope', '$stateParams' ]
+HomeController.$inject = ['$scope' ]
 angular
   .module('app')
   .controller('HomeController', HomeController)
