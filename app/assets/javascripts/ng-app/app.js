@@ -5,6 +5,7 @@ angular
       .state('home', {
         url: '/home',
         controller:'HomeController',
+        controllerAs: 'ctrl',
         templateUrl: 'home.html'
       })
       .state('home.about', {
