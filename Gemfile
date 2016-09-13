@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
@@ -25,7 +24,7 @@ gem 'devise'
 gem 'faker'
 gem 'active_model_serializers'
 gem 'pry'
-# gem 'bower-rails'
+gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'validate_url', github: 'perfectline/validates_url'
 # Use ActiveModel has_secure_password
@@ -54,6 +53,7 @@ group :development do
 end
 
 group :production do
+  gem 'puma'
   gem 'pg'
   gem 'rails_12factor'
 end
