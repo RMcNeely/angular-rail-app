@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # for adding in the files I need to production
+  config.assets.precompile += %w( application.js )
+  config.assets.precompile += %w( application.scss )
 end
