@@ -23,10 +23,9 @@
 //= require checklist-model
 //= require initial
 //= require scrollspy
-// angular-material
+//= angular-material
 // require skill-new.js
 //= require jquery_ujs
-// require turbolinks
 //= require_tree ./ng-app
 
 $(document).ready(function(){

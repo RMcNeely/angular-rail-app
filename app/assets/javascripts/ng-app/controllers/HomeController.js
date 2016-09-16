@@ -1,14 +1,7 @@
-function HomeController($scope) {
-  var ctrl = this
-  console.log('The Home Controller has fired')
+function HomeController ($rootScope) {
 
-  // var sp = Object.create($stateParams)
-  // ctrl.skopeName = sp.skope
-  // var skopeNameVar = ctrl.skopeName.toString()
-  // ctrl.resources = ResourceService.getResource()//{skope: skopeName})
-  // debugger
 }
-HomeController.$inject = ['$scope']
+HomeController.$inject=['$rootScope']
 angular
   .module('app')
   .controller('HomeController', HomeController)
