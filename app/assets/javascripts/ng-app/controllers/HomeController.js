@@ -1,7 +1,7 @@
-function HomeController () {
+function HomeController ($rootScope) {
 
 }
-HomeController.$inject=['$rootscope']
+HomeController.$inject=['$rootScope']
 angular
   .module('app')
   .controller('HomeController', HomeController)
