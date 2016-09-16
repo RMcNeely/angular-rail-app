@@ -24391,10 +24391,6 @@ console.log('test 1.3')
 angular
   .module('app', [ 'ui.router', 'templates', 'ngRoute', 'ngMessages', 'checklist-model', 'duScroll' ])
   .config(function($stateProvider, $urlRouterProvider){
-    debugger
-    console.log(HomeController.$inject)
-    console.log(ResourceController.$inject)
-    console.log(SkillController.$inject)
     $stateProvider
       .state('home', {
         url: '/home',
@@ -24456,10 +24452,10 @@ angular
 
   })
 ;
-function HomeController () {
+function HomeController ($rootScope) {
 
 }
-HomeController.$inject=['$rootscope']
+HomeController.$inject=['$rootScope']
 angular
   .module('app')
   .controller('HomeController', HomeController)
