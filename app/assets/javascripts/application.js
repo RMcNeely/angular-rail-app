@@ -24,7 +24,7 @@
 //= require initial
 //= require scrollspy
 //= angular-material
-//= require skill-new.js
+// require skill-new.js
 //= require jquery_ujs
 //= require_tree ./ng-app
 
