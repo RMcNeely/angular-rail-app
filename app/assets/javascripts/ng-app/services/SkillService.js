@@ -1,5 +1,5 @@
 function SkillService($http, $stateParams) {
-  API = 'http://localhost:3000/api/'
+  API = 'http://angular-learn-source.herokuapp.com/api/'
 
   this.query = function(){
     return $http.get((API + 'skills'), {cache:true})
