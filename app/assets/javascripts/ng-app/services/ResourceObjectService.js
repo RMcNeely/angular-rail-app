@@ -17,7 +17,7 @@ function ResourceObjectService($http, $stateParams) {
     return $http.put(API + 'resources/' + resource.id, resource)
   }
 }
-ResourceObjectService.$inject = ['$http', '$stateParams']
+ResourceObjectService.$inject=['$http', '$stateParams']
 
 angular
   .module('app')

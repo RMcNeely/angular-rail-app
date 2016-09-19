@@ -14,20 +14,10 @@
 //= require angular
 //= require angular-route
 //= require angular-ui-router
-//= require angular-animate
 //= require angular-rails-templates
 //= require angular-resource
 //= require angular-messages
+//= require checklist-model
 //= require angular-scroll
 //= require_tree ./templates
-//= require checklist-model
-//= require initial
-//= require scrollspy
-//= angular-material
-// require skill-new.js
-//= require jquery_ujs
 //= require_tree ./ng-app
-
-$(document).ready(function(){
-  $('.scrollspy').scrollSpy();
-});

@@ -1,4 +1,4 @@
-function ResourceController($scope, $stateParams, ResourceObjectService, $document) {
+function ResourceController($scope, $stateParams, ResourceObjectService) {
   var ctrl = this
   console.log($stateParams)
   console.log('The Resource Controller has fired')
@@ -32,7 +32,7 @@ function ResourceController($scope, $stateParams, ResourceObjectService, $docume
     // $document.scrollToElementAnimated(someElement);
 }
 
-ResourceController.$inject = ['$scope', '$stateParams',  'ResourceObjectService', '$document']
+ResourceController.$inject = ['$scope', '$stateParams',  'ResourceObjectService']
 angular
   .module('app')
   .controller('ResourceController', ResourceController)

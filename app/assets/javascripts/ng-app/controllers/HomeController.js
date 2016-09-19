@@ -1,7 +1,12 @@
-function HomeController ($rootScope) {
+console.log('test test test')
 
+function HomeController($scope) {
+  var ctrl = this
+  console.log(ctrl)
+  console.log(ctrl === $scope)
 }
-HomeController.$inject=['$rootScope']
+
+HomeController.$inject=['$scope']
 angular
   .module('app')
   .controller('HomeController', HomeController)

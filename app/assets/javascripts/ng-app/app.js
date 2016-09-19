@@ -1,4 +1,4 @@
-console.log('test 1.3')
+console.log('test 2.1.1')
 
 angular
   .module('app', [ 'ui.router', 'templates', 'ngRoute', 'ngMessages', 'checklist-model', 'duScroll' ])
@@ -12,18 +12,20 @@ angular
       })
       .state('home.about', {
         url: 'about',
-        controller: 'SkillController',
+        controller: 'HomeController',
         controllerAs: 'ctrl',
         templateUrl: 'about.html'
       })
       .state('home.skill', {
         url: 'skills',
-        controller: 'SkillController as ctrl',
+        controller: 'SkillController',
+        controllerAs: 'ctrl',
         templateUrl: 'skills/skills.html'
       })
       .state('skill', {
         url: 'skills/:id',
-        controller: 'SkillController as ctrl',
+        controller: 'SkillController',
+        controllerAs: 'ctrl',
         templateUrl: 'skills/show.html'
       })
       .state('skill.resources', {
@@ -46,7 +48,8 @@ angular
       })
       .state('resource', {
         url: 'resources/:id',
-        controller: 'ResourceController as ctrl',
+        controller: 'ResourceController',
+        controllerAs: 'ctrl',
         templateUrl: 'resources/show.html'
       })
       .state('home.resources.new', {
@@ -58,8 +61,8 @@ angular
 
       //Default Fallback Route
       $urlRouterProvider.otherwise('/')
-
+      // configure.$inject=['$scope', '$state', '$stateParams', 'Skill', 'ResourceObject', 'SkillService', 'ResourceObjectService', '$http']
   //  // enable HTML5 Mode for SEO
   //  $locationProvider.html5Mode({enabled: true, requireBase: false});
-
+  console.log('test')
   })

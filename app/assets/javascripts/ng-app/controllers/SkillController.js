@@ -31,7 +31,7 @@ function SkillController($scope, Skill, SkillService, $stateParams) {
 
   ctrl.decreaseFavorite = function(skill){
     skill_hash = angular.copy(skill)
-    debugger;
+
     skill_hash.favorite --
     // debugger
     SkillService.update(skill_hash).success( function(response){
