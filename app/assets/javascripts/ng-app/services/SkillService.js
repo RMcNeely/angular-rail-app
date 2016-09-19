@@ -2,11 +2,11 @@ function SkillService($http, $stateParams) {
   API = 'https://angular-learn-source.herokuapp.com/api/'
 
   this.query = function(){
-    return $https.get((API + 'skills'), {cache:true})
+    return $http.get((API + 'skills'), {cache:true})
   }
 
   this.get = function($stateParams){
-    return $https.get(API + 'skills/' + $stateParams.id)
+    return $http.get(API + 'skills/' + $stateParams.id)
   }
 
   this.post = function(newSkill){
